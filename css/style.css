@@ -197,5 +197,8 @@ body {
     -webkit-transition: all 0.5s ease-in;
     transition: all 0.5s ease-in;
   }
+  .header .header__container .main-text {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
