@@ -1,0 +1,100 @@
+.header {
+	width: 100vw;
+	height: 100vh;
+	@include flex-center;
+	background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.4),
+			$primary-background-color
+		),
+		url(../pictures/main_pic.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	padding: 1rem;
+
+	&__container {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		@include flex-end;
+
+		& .nav__container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: clamp(30%, 2.5vw, 100%);
+			height: 100%;
+			@include flex-center;
+			z-index: 10;
+
+			& .menu__hambuerger{
+				display: none;
+			}
+
+			& .nav-menu {
+				height: 100%;
+				width: 90%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-start;
+				flex-direction: column;
+
+				& li {
+					list-style: none;
+					line-height: 40px;
+
+					& a {
+						text-decoration: none;
+						font-size: clamp(1.3rem, 3.5vw, 1.7rem);
+						color: $primary-text-color;
+						font-style: oblique;
+						transition: all 0.3s ease-in;
+
+						&:hover {
+							color: $secondary-text-color;
+							transition: all 0.3s ease-in;
+						}
+					}
+				}
+			}
+		}
+
+        & .main-text{
+            height: 100%;
+			width: clamp(60%, 30.5vw, 100%);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 1rem;
+
+            &__container {
+                height: 100%;
+                width: clamp(70%, 3,4vw, 100%);
+                @include flex-center;
+                flex-direction: column;
+    
+                & h1 {
+                    font-size: clamp(3rem, 8vw, 5rem);
+                    flex-grow: 0.1;
+                    text-align: center;
+                }
+                & h2 {
+                    color:$secondary-text-color;
+                    font-size: clamp(1.5rem, 4vw, 2rem);
+                    flex-grow: 0.1;
+    
+                    text-align: center;
+                }
+                & img {
+                    margin-top: 3rem;
+                    height: clamp(70px, 10.5vw, 150px);
+                    width: clamp(70px, 10.5vw, 150px);
+                    background: $primary-text-color text;
+                }
+            }
+        }
+    }	
+}
