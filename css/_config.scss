@@ -8,11 +8,13 @@ $secondary-text-color: rgb(211, 197, 197);
     margin: 0;
     padding: 0;
     color: $primary-text-color;
+
 }
 
 body{
     background-color: $primary-background-color;
     border-left: 5px solid $primary-text-color;
+    overflow-x: hidden;
 }
 
 @mixin flex-center{
@@ -35,6 +37,12 @@ body{
     justify-content: flex-end;
     align-items: center;
 }
+@mixin flex-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 
 @mixin media-tablet{
     @media screen and (max-width:768px){
