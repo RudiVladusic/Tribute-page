@@ -1,0 +1,61 @@
+.biography {
+  width: 100vw;
+  padding: 0 1rem;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    @include flex-space-evenly;
+    flex-direction: column;
+
+    & h1 {
+      letter-spacing: 3px;
+      margin: 3rem 0;
+      font-size: clamp(1.5rem, 3.5vw, 4rem);
+    }
+
+    & .bio {
+      width: 100%;
+      height: fit-content;
+      position: relative;
+      margin: 3rem 0;
+      padding: 1.5rem;
+      @include flex-start;
+
+      &::after {
+        content: "";
+        width: 0%;
+        background-color: $primary-text-color;
+        position: absolute;
+        bottom: 0;
+        height: 3px;
+        transition: all 1s ease-in-out;
+      }
+
+      &:hover::after {
+        width: 65%;
+        transition: all 1s ease-in-out;
+      }
+
+      & p {
+        width: 40%;
+        margin: 0 3rem;
+        color: $secondary-text-color;
+        font-weight: 400;
+        letter-spacing: 2px;
+        font-size: clamp(1rem, 1.5vw, 1.3rem);
+        cursor: pointer;
+      }
+
+      & img {
+        width: 35%;
+        height: 25%;
+      }
+    }
+
+    & .bio2,
+    .bio4 {
+      flex-direction: row-reverse;
+    }
+  }
+}
